@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BancoDePreguntas.Services.LogService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,14 +11,14 @@ namespace BancoDePreguntas.Controllers
     {
         protected override void OnException(ExceptionContext filterContext)
         {
-           // ILog log = new ProductionLog();
+            ILog log = new ProductionLog();
 
             if (filterContext.ExceptionHandled)
             {
                 return;
             }
 
-           // log.WriteLog(filterContext.Exception.Message);
+            log.WriteLog(filterContext.Exception.Message);
             filterContext.Result = new ViewResult
             {
                 ViewName = "~/Views/Shared/Error.csthml"

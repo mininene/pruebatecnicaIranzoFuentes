@@ -149,6 +149,9 @@
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\ValidationMetadataModel\PreguntaMetadada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LogService\DevelopmentLog.cs" />
+    <Compile Include="Services\LogService\ILog.cs" />
+    <Compile Include="Services\LogService\ProductionLog.cs" />
     <Compile Include="Services\Repository\GenericRepository.cs" />
     <Compile Include="Services\Repository\IGenericRepository.cs" />
     <Compile Include="Services\Repository\PreguntaRepository\IPreguntaRepository.cs" />
@@ -210,7 +213,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Services\LogService\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
