@@ -96,7 +96,7 @@ namespace BancoDePreguntas.Controllers
             ViewBag.RespuestaId = new SelectList(db.Respuesta, "Id", "Respuestas", pregunta.RespuestaId);
             ViewBag.TemaId = new SelectList(db.Tema, "Id", "NombreTema", pregunta.TemaId);
             ViewBag.TiempodId = new SelectList(db.TiempoRealizacion, "Id", "Tiempo", pregunta.TiempodId);
-            ViewBag.TipoId = new SelectList(db.TipoPregunta, "Id", "TipoDePregunta", pregunta.TipoId);
+            ViewBag.TipoId = new SelectList(db.TipoPregunta, "Id", "TipoDePregunta", pregunta.TipoId) ;
             return View(pregunta);
         }
 
