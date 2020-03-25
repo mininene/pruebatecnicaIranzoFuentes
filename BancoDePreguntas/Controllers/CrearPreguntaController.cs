@@ -13,7 +13,7 @@ using BancoDePreguntas.Services.Repository.PreguntaRepository;
 
 namespace BancoDePreguntas.Controllers
 {
-    public class CrearPreguntaController : Controller
+    public class CrearPreguntaController : BaseController
     {
         private IPreguntaRepository repositorio = null;
         public CrearPreguntaController()
