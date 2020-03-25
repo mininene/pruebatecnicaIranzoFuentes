@@ -130,7 +130,7 @@
     <Compile Include="Controllers\CrearPreguntaController.cs" />
     <Compile Include="Controllers\EditarPreguntaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\VerListadoController.cs" />
+    <Compile Include="Controllers\VerListaController.cs" />
     <Compile Include="DAL\PreguntaContext.cs" />
     <Compile Include="DAL\PreguntaInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,6 +148,10 @@
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\ValidationMetadataModel\PreguntaMetadada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Repository\GenericRepository.cs" />
+    <Compile Include="Services\Repository\IGenericRepository.cs" />
+    <Compile Include="Services\Repository\PreguntaRepository\IPreguntaRepository.cs" />
+    <Compile Include="Services\Repository\PreguntaRepository\PreguntaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -187,11 +191,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\VerListado\Create.cshtml" />
-    <Content Include="Views\VerListado\Delete.cshtml" />
-    <Content Include="Views\VerListado\Details.cshtml" />
-    <Content Include="Views\VerListado\Edit.cshtml" />
-    <Content Include="Views\VerListado\Index.cshtml" />
     <Content Include="Views\CrearPregunta\Create.cshtml" />
     <Content Include="Views\CrearPregunta\Delete.cshtml" />
     <Content Include="Views\CrearPregunta\Details.cshtml" />
@@ -202,9 +201,15 @@
     <Content Include="Views\EditarPregunta\Details.cshtml" />
     <Content Include="Views\EditarPregunta\Edit.cshtml" />
     <Content Include="Views\EditarPregunta\Index.cshtml" />
+    <Content Include="Views\VerLista\Create.cshtml" />
+    <Content Include="Views\VerLista\Delete.cshtml" />
+    <Content Include="Views\VerLista\Details.cshtml" />
+    <Content Include="Views\VerLista\Edit.cshtml" />
+    <Content Include="Views\VerLista\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Services\LogService\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

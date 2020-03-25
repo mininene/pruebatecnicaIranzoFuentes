@@ -9,18 +9,27 @@ using System.Web;
 using System.Web.Mvc;
 using BancoDePreguntas.DAL;
 using BancoDePreguntas.Models;
+using BancoDePreguntas.Services.Repository.PreguntaRepository;
 
 namespace BancoDePreguntas.Controllers
 {
     public class CrearPreguntaController : Controller
     {
-        private PreguntaContext db = new PreguntaContext();
+        private IPreguntaRepository repositorio = null;
+        public CrearPreguntaController()
+        {
+            this.repositorio = new PreguntaRepository();
+        }
+
+        public CrearPreguntaController(IPreguntaRepository repositorio)
+        {
+            this.repositorio = repositorio;
+        }
 
         // GET: Crear2
         public async Task<ActionResult> Index()
         {
-            var pregunta = db.Pregunta.Include(p => p.Asignatura).Include(p => p.Estudio).Include(p => p.GradoDificultad).Include(p => p.Idioma).Include(p => p.Respuesta).Include(p => p.Tema).Include(p => p.TiempoRealizacion).Include(p => p.TipoPregunta);
-            return View(await pregunta.ToListAsync());
+             return View(await repositorio.GetAll());
         }
 
         // GET: Crear2/Details/5
@@ -30,7 +39,7 @@ namespace BancoDePreguntas.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pregunta pregunta = await db.Pregunta.FindAsync(id);
+            Pregunta pregunta = await repositorio.GetById(id);
             if (pregunta == null)
             {
                 return HttpNotFound();
@@ -39,16 +48,16 @@ namespace BancoDePreguntas.Controllers
         }
 
         // GET: Crear2/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
-            ViewBag.AsignaturaId = new SelectList(db.Asignatura, "Id", "NombreAsignatura");
-            ViewBag.EstudioId = new SelectList(db.Estudio, "Id", "NombreEstudio");
-            ViewBag.DificultadId = new SelectList(db.GradoDificultad, "Id", "Nivel");
-            ViewBag.IdiomaId = new SelectList(db.Idioma, "Id", "Lenguaje");
-            ViewBag.RespuestaId = new SelectList(db.Respuesta, "Id", "Respuestas");
-            ViewBag.TemaId = new SelectList(db.Tema, "Id", "NombreTema");
-            ViewBag.TiempodId = new SelectList(db.TiempoRealizacion, "Id", "Tiempo");
-            ViewBag.TipoId = new SelectList(db.TipoPregunta, "Id", "TipoDePregunta");
+            ViewBag.AsignaturaId = new SelectList(await repositorio.ListaAsignatura(), "Id", "NombreAsignatura");
+            ViewBag.EstudioId = new SelectList(await repositorio.ListaEstudio(), "Id", "NombreEstudio");
+            ViewBag.DificultadId = new SelectList(await repositorio.ListaDificultad(), "Id", "Nivel");
+            ViewBag.IdiomaId = new SelectList(await repositorio.ListaIdioma(),"Id", "Lenguaje");
+            ViewBag.RespuestaId = new SelectList(await repositorio.ListaRespuesta(), "Id", "Respuestas");
+            ViewBag.TemaId = new SelectList(await repositorio.ListaTema(),"Id", "NombreTema");
+            ViewBag.TiempodId = new SelectList(await repositorio.ListaTiempo(), "Id", "Tiempo");
+            ViewBag.TipoId = new SelectList(await repositorio.ListaTipoPregunta(), "Id", "TipoDePregunta");
             return View();
         }
 
@@ -61,19 +70,19 @@ namespace BancoDePreguntas.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Pregunta.Add(pregunta);
-                await db.SaveChangesAsync();
+                repositorio.Insert(pregunta);
+                await repositorio.Save();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AsignaturaId = new SelectList(db.Asignatura, "Id", "NombreAsignatura", pregunta.AsignaturaId);
-            ViewBag.EstudioId = new SelectList(db.Estudio, "Id", "NombreEstudio", pregunta.EstudioId);
-            ViewBag.DificultadId = new SelectList(db.GradoDificultad, "Id", "Nivel", pregunta.DificultadId);
-            ViewBag.IdiomaId = new SelectList(db.Idioma, "Id", "Lenguaje", pregunta.IdiomaId);
-            ViewBag.RespuestaId = new SelectList(db.Respuesta, "Id", "Respuestas", pregunta.RespuestaId);
-            ViewBag.TemaId = new SelectList(db.Tema, "Id", "NombreTema", pregunta.TemaId);
-            ViewBag.TiempodId = new SelectList(db.TiempoRealizacion, "Id", "Tiempo", pregunta.TiempodId);
-            ViewBag.TipoId = new SelectList(db.TipoPregunta, "Id", "TipoDePregunta", pregunta.TipoId);
+            ViewBag.AsignaturaId = new SelectList(await repositorio.ListaAsignatura(), "Id", "NombreAsignatura", pregunta.AsignaturaId);
+            ViewBag.EstudioId = new SelectList(await repositorio.ListaEstudio(), "Id", "NombreEstudio", pregunta.EstudioId);
+            ViewBag.DificultadId = new SelectList(await repositorio.ListaDificultad(), "Id", "Nivel", pregunta.DificultadId);
+            ViewBag.IdiomaId = new SelectList(await repositorio.ListaIdioma(), "Id", "Lenguaje", pregunta.IdiomaId);
+            ViewBag.RespuestaId = new SelectList(await repositorio.ListaRespuesta(), "Id", "Respuestas", pregunta.RespuestaId);
+            ViewBag.TemaId = new SelectList(await repositorio.ListaTema(), "Id", "NombreTema", pregunta.TemaId);
+            ViewBag.TiempodId = new SelectList(await repositorio.ListaTiempo(), "Id", "Tiempo", pregunta.TiempodId);
+            ViewBag.TipoId = new SelectList(await repositorio.ListaTipoPregunta(), "Id", "TipoDePregunta", pregunta.TipoId);
             return View(pregunta);
         }
 
@@ -84,19 +93,20 @@ namespace BancoDePreguntas.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pregunta pregunta = await db.Pregunta.FindAsync(id);
+            Pregunta pregunta = await repositorio.GetById(id);
             if (pregunta == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.AsignaturaId = new SelectList(db.Asignatura, "Id", "NombreAsignatura", pregunta.AsignaturaId);
-            ViewBag.EstudioId = new SelectList(db.Estudio, "Id", "NombreEstudio", pregunta.EstudioId);
-            ViewBag.DificultadId = new SelectList(db.GradoDificultad, "Id", "Nivel", pregunta.DificultadId);
-            ViewBag.IdiomaId = new SelectList(db.Idioma, "Id", "Lenguaje", pregunta.IdiomaId);
-            ViewBag.RespuestaId = new SelectList(db.Respuesta, "Id", "Respuestas", pregunta.RespuestaId);
-            ViewBag.TemaId = new SelectList(db.Tema, "Id", "NombreTema", pregunta.TemaId);
-            ViewBag.TiempodId = new SelectList(db.TiempoRealizacion, "Id", "Tiempo", pregunta.TiempodId);
-            ViewBag.TipoId = new SelectList(db.TipoPregunta, "Id", "TipoDePregunta", pregunta.TipoId);
+            ViewBag.AsignaturaId = new SelectList(await repositorio.ListaAsignatura(), "Id", "NombreAsignatura", pregunta.AsignaturaId);
+            ViewBag.EstudioId = new SelectList(await repositorio.ListaEstudio(), "Id", "NombreEstudio", pregunta.EstudioId);
+            ViewBag.DificultadId = new SelectList(await repositorio.ListaDificultad(), "Id", "Nivel", pregunta.DificultadId);
+            ViewBag.IdiomaId = new SelectList(await repositorio.ListaIdioma(), "Id", "Lenguaje", pregunta.IdiomaId);
+            ViewBag.RespuestaId = new SelectList(await repositorio.ListaRespuesta(), "Id", "Respuestas", pregunta.RespuestaId);
+            ViewBag.TemaId = new SelectList(await repositorio.ListaTema(), "Id", "NombreTema", pregunta.TemaId);
+            ViewBag.TiempodId = new SelectList(await repositorio.ListaTiempo(), "Id", "Tiempo", pregunta.TiempodId);
+            ViewBag.TipoId = new SelectList(await repositorio.ListaTipoPregunta(), "Id", "TipoDePregunta", pregunta.TipoId);
+
             return View(pregunta);
         }
 
@@ -109,18 +119,19 @@ namespace BancoDePreguntas.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(pregunta).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                repositorio.Update(pregunta);
+                await repositorio.Save();
                 return RedirectToAction("Index");
             }
-            ViewBag.AsignaturaId = new SelectList(db.Asignatura, "Id", "NombreAsignatura", pregunta.AsignaturaId);
-            ViewBag.EstudioId = new SelectList(db.Estudio, "Id", "NombreEstudio", pregunta.EstudioId);
-            ViewBag.DificultadId = new SelectList(db.GradoDificultad, "Id", "Nivel", pregunta.DificultadId);
-            ViewBag.IdiomaId = new SelectList(db.Idioma, "Id", "Lenguaje", pregunta.IdiomaId);
-            ViewBag.RespuestaId = new SelectList(db.Respuesta, "Id", "Respuestas", pregunta.RespuestaId);
-            ViewBag.TemaId = new SelectList(db.Tema, "Id", "NombreTema", pregunta.TemaId);
-            ViewBag.TiempodId = new SelectList(db.TiempoRealizacion, "Id", "Tiempo", pregunta.TiempodId);
-            ViewBag.TipoId = new SelectList(db.TipoPregunta, "Id", "TipoDePregunta", pregunta.TipoId);
+            ViewBag.AsignaturaId = new SelectList(await repositorio.ListaAsignatura(), "Id", "NombreAsignatura", pregunta.AsignaturaId);
+            ViewBag.EstudioId = new SelectList(await repositorio.ListaEstudio(), "Id", "NombreEstudio", pregunta.EstudioId);
+            ViewBag.DificultadId = new SelectList(await repositorio.ListaDificultad(), "Id", "Nivel", pregunta.DificultadId);
+            ViewBag.IdiomaId = new SelectList(await repositorio.ListaIdioma(), "Id", "Lenguaje", pregunta.IdiomaId);
+            ViewBag.RespuestaId = new SelectList(await repositorio.ListaRespuesta(), "Id", "Respuestas", pregunta.RespuestaId);
+            ViewBag.TemaId = new SelectList(await repositorio.ListaTema(), "Id", "NombreTema", pregunta.TemaId);
+            ViewBag.TiempodId = new SelectList(await repositorio.ListaTiempo(), "Id", "Tiempo", pregunta.TiempodId);
+            ViewBag.TipoId = new SelectList(await repositorio.ListaTipoPregunta(), "Id", "TipoDePregunta", pregunta.TipoId);
+
             return View(pregunta);
         }
 
@@ -131,7 +142,7 @@ namespace BancoDePreguntas.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pregunta pregunta = await db.Pregunta.FindAsync(id);
+            Pregunta pregunta = await repositorio.GetById(id);
             if (pregunta == null)
             {
                 return HttpNotFound();
@@ -144,19 +155,19 @@ namespace BancoDePreguntas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Pregunta pregunta = await db.Pregunta.FindAsync(id);
-            db.Pregunta.Remove(pregunta);
-            await db.SaveChangesAsync();
+           
+            await repositorio.Delete(id);
+            await repositorio.Save();
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }
