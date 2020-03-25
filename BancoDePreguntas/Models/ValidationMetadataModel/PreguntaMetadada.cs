@@ -44,7 +44,18 @@ namespace BancoDePreguntas.Models
 
         [Required]
         [ForeignKey("TiempoRealizacion")]
+        [Display(Name="Duración")]
         public Nullable<int> TiempodId { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString ="{0:yyyy-MM-dd}", ApplyFormatInEditMode =true)]
+        public System.DateTime FechaCreacion { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public System.DateTime FechaActualizacion { get; set; }
     }
 
     [MetadataType(typeof(PreguntaMetadada))]

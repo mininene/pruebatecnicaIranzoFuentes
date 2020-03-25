@@ -16,14 +16,14 @@ namespace BancoDePreguntas.Controllers
     {
         private PreguntaContext db = new PreguntaContext();
 
-        // GET: Pregunta
+        // GET: Crear2
         public async Task<ActionResult> Index()
         {
             var pregunta = db.Pregunta.Include(p => p.Asignatura).Include(p => p.Estudio).Include(p => p.GradoDificultad).Include(p => p.Idioma).Include(p => p.Respuesta).Include(p => p.Tema).Include(p => p.TiempoRealizacion).Include(p => p.TipoPregunta);
             return View(await pregunta.ToListAsync());
         }
 
-        // GET: Pregunta/Details/5
+        // GET: Crear2/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -38,7 +38,7 @@ namespace BancoDePreguntas.Controllers
             return View(pregunta);
         }
 
-        // GET: Pregunta/Create
+        // GET: Crear2/Create
         public ActionResult Create()
         {
             ViewBag.AsignaturaId = new SelectList(db.Asignatura, "Id", "NombreAsignatura");
@@ -52,12 +52,12 @@ namespace BancoDePreguntas.Controllers
             return View();
         }
 
-        // POST: Pregunta/Create
+        // POST: Crear2/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,EstudioId,AsignaturaId,TemaId,TipoId,IdiomaId,PreguntaTextual,RespuestaId,DificultadId,TiempodId")] Pregunta pregunta)
+        public async Task<ActionResult> Create([Bind(Include = "Id,EstudioId,AsignaturaId,TemaId,TipoId,IdiomaId,PreguntaTextual,RespuestaId,DificultadId,TiempodId,FechaCreacion,FechaActualizacion")] Pregunta pregunta)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace BancoDePreguntas.Controllers
             return View(pregunta);
         }
 
-        // GET: Pregunta/Edit/5
+        // GET: Crear2/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -100,12 +100,12 @@ namespace BancoDePreguntas.Controllers
             return View(pregunta);
         }
 
-        // POST: Pregunta/Edit/5
+        // POST: Crear2/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,EstudioId,AsignaturaId,TemaId,TipoId,IdiomaId,PreguntaTextual,RespuestaId,DificultadId,TiempodId")] Pregunta pregunta)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,EstudioId,AsignaturaId,TemaId,TipoId,IdiomaId,PreguntaTextual,RespuestaId,DificultadId,TiempodId,FechaCreacion,FechaActualizacion")] Pregunta pregunta)
         {
             if (ModelState.IsValid)
             {
@@ -124,7 +124,7 @@ namespace BancoDePreguntas.Controllers
             return View(pregunta);
         }
 
-        // GET: Pregunta/Delete/5
+        // GET: Crear2/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,7 +139,7 @@ namespace BancoDePreguntas.Controllers
             return View(pregunta);
         }
 
-        // POST: Pregunta/Delete/5
+        // POST: Crear2/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)

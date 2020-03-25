@@ -83,6 +83,22 @@
             @Html.DisplayFor(model => model.PreguntaTextual)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaActualizacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaActualizacion)
+        </dd>
+
     </dl>
 
     @using (Html.BeginForm()) {
@@ -90,7 +106,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-danger" /> 
-            @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Back to List", "Index",new { }, new { @class = "btn btn-warning" })
         </div>
     }
 </div>

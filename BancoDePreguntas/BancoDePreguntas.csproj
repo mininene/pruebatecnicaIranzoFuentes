@@ -127,9 +127,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\EditarPreguntaController.cs" />
     <Compile Include="Controllers\CrearPreguntaController.cs" />
+    <Compile Include="Controllers\EditarPreguntaController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VerListadoController.cs" />
     <Compile Include="DAL\PreguntaContext.cs" />
     <Compile Include="DAL\PreguntaInitializer.cs" />
@@ -145,6 +145,7 @@
     <Compile Include="Models\Tema.cs" />
     <Compile Include="Models\TiempoRealizacion.cs" />
     <Compile Include="Models\TipoPregunta.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\ValidationMetadataModel\PreguntaMetadada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -186,6 +187,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\VerListado\Create.cshtml" />
+    <Content Include="Views\VerListado\Delete.cshtml" />
+    <Content Include="Views\VerListado\Details.cshtml" />
+    <Content Include="Views\VerListado\Edit.cshtml" />
+    <Content Include="Views\VerListado\Index.cshtml" />
     <Content Include="Views\CrearPregunta\Create.cshtml" />
     <Content Include="Views\CrearPregunta\Delete.cshtml" />
     <Content Include="Views\CrearPregunta\Details.cshtml" />
@@ -196,11 +202,6 @@
     <Content Include="Views\EditarPregunta\Details.cshtml" />
     <Content Include="Views\EditarPregunta\Edit.cshtml" />
     <Content Include="Views\EditarPregunta\Index.cshtml" />
-    <Content Include="Views\VerListado\Create.cshtml" />
-    <Content Include="Views\VerListado\Delete.cshtml" />
-    <Content Include="Views\VerListado\Details.cshtml" />
-    <Content Include="Views\VerListado\Edit.cshtml" />
-    <Content Include="Views\VerListado\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -36,7 +36,11 @@ namespace BancoDePreguntas.Models
         [ForeignKey("TiempoRealizacion")]
         public Nullable<int> TiempodId { get; set; }
 
-        
+        public System.DateTime FechaCreacion { get; set; }
+       
+        public System.DateTime FechaActualizacion { get; set; }
+
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
