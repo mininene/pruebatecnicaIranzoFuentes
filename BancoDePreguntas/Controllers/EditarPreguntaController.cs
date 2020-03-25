@@ -12,18 +12,18 @@ using BancoDePreguntas.Models;
 
 namespace BancoDePreguntas.Controllers
 {
-    public class PreguntaController : Controller
+    public class EditarPreguntaController : Controller
     {
         private PreguntaContext db = new PreguntaContext();
 
-        // GET: Pregunta
+        // GET: ListaDePreguntas
         public async Task<ActionResult> Index()
         {
             var pregunta = db.Pregunta.Include(p => p.Asignatura).Include(p => p.Estudio).Include(p => p.GradoDificultad).Include(p => p.Idioma).Include(p => p.Respuesta).Include(p => p.Tema).Include(p => p.TiempoRealizacion).Include(p => p.TipoPregunta);
             return View(await pregunta.ToListAsync());
         }
 
-        // GET: Pregunta/Details/5
+        // GET: ListaDePreguntas/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -38,7 +38,7 @@ namespace BancoDePreguntas.Controllers
             return View(pregunta);
         }
 
-        // GET: Pregunta/Create
+        // GET: ListaDePreguntas/Create
         public ActionResult Create()
         {
             ViewBag.AsignaturaId = new SelectList(db.Asignatura, "Id", "NombreAsignatura");
@@ -52,7 +52,7 @@ namespace BancoDePreguntas.Controllers
             return View();
         }
 
-        // POST: Pregunta/Create
+        // POST: ListaDePreguntas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -77,7 +77,7 @@ namespace BancoDePreguntas.Controllers
             return View(pregunta);
         }
 
-        // GET: Pregunta/Edit/5
+        // GET: ListaDePreguntas/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -96,11 +96,11 @@ namespace BancoDePreguntas.Controllers
             ViewBag.RespuestaId = new SelectList(db.Respuesta, "Id", "Respuestas", pregunta.RespuestaId);
             ViewBag.TemaId = new SelectList(db.Tema, "Id", "NombreTema", pregunta.TemaId);
             ViewBag.TiempodId = new SelectList(db.TiempoRealizacion, "Id", "Tiempo", pregunta.TiempodId);
-            ViewBag.TipoId = new SelectList(db.TipoPregunta, "Id", "TipoDePregunta", pregunta.TipoId);
+            ViewBag.TipoId = new SelectList(db.TipoPregunta, "Id", "TipoDePregunta", pregunta.TipoId) ;
             return View(pregunta);
         }
 
-        // POST: Pregunta/Edit/5
+        // POST: ListaDePreguntas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -124,7 +124,7 @@ namespace BancoDePreguntas.Controllers
             return View(pregunta);
         }
 
-        // GET: Pregunta/Delete/5
+        // GET: ListaDePreguntas/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,7 +139,7 @@ namespace BancoDePreguntas.Controllers
             return View(pregunta);
         }
 
-        // POST: Pregunta/Delete/5
+        // POST: ListaDePreguntas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
