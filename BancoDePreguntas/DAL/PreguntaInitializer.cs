@@ -91,13 +91,13 @@ namespace BancoDePreguntas.DAL
 
             var listaPregunta = new List<Pregunta>
             {
- //new Pregunta{Tema="las Plantas",Tipo="variada",Idioma="Ingles", GradoDificultad = "2", TiempoRealización="20",CodAsignaturaId=1,CodEstudioId=1},
- //            };
+   new Pregunta{TemaId=1,TipoId=2, IdiomaId=3,DificultadId=2,TiempodId=2,AsignaturaId=1,EstudioId=1, RespuestaId=1, PreguntaTextual="¿2x2 =4?"},
+   new Pregunta{TemaId=2,TipoId=1, IdiomaId=2,DificultadId=1,TiempodId=3,AsignaturaId=1,EstudioId=2, RespuestaId=2, PreguntaTextual="¿Amar y querer son sinonimos?"},
+   new Pregunta{TemaId=1,TipoId=2, IdiomaId=1,DificultadId=1,TiempodId=1,AsignaturaId=2,EstudioId=1, RespuestaId=1, PreguntaTextual="¿4-2 = 1?"},
 
-      //new Pregunta{CodTemaId=1,CodTipoId=2, CodIdiomaId=3,CodDificultadId=2,CodTiempodId=2,CodAsignaturaId=1,CodEstudioId=1},
-      //      };
-      new Pregunta{},
+
             };
+     
 
             listaPregunta.ForEach(s => context.Pregunta.Add(s));
             context.SaveChanges();
