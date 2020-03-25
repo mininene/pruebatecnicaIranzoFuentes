@@ -137,6 +137,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="InfraestructuraTransversal\ControllerException\ControllerException.cs" />
+    <Compile Include="InfraestructuraTransversal\ServiceException\LogException.cs" />
+    <Compile Include="InfraestructuraTransversal\ServiceException\RepositoryException.cs" />
     <Compile Include="Models\Asignatura.cs" />
     <Compile Include="Models\Estudio.cs" />
     <Compile Include="Models\GradoDificultad.cs" />

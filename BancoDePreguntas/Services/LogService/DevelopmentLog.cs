@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BancoDePreguntas.InfraestructuraTransversal.ServiceException;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,14 +13,14 @@ namespace BancoDePreguntas.Services.LogService
 
             var date = DateTime.Now;
 
-            //try
-            //{
+            try
+            {
                 Console.WriteLine($"[{date}] {mensaje}");
-            //}
-            //catch (Exception ex)
-            //{
-            //    //throw new LogException("No se ha podido escribir en la consola", ex);
-            //}
+            }
+            catch (Exception ex)
+            {
+                throw new LogException("No se ha podido escribir en la consola", ex);
+            }
         }
     }
 }
