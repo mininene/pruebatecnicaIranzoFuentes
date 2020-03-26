@@ -101,6 +101,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="PruebasIntegracion\CrearPreguntaControllerTest.cs" />
+    <Compile Include="PruebasIntegracion\EditarPreguntaControllerTest.cs" />
+    <Compile Include="PruebasIntegracion\VerListaControllerTest.cs" />
+    <Compile Include="PruebasUnitarias\Services\LogServiceTest.cs" />
+    <Compile Include="PruebasUnitarias\Services\PreguntaRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -346,6 +351,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PruebasUnitarias\Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

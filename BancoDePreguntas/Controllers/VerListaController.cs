@@ -27,11 +27,11 @@ namespace BancoDePreguntas.Controllers
         }
 
         // GET: Crear2
-        public async Task<ActionResult> Index(string searchString)
+        public async Task<ActionResult> Index(/*string searchString*/)
         {
-            var lista =  repositorio.GetPreguntas(searchString);
-            return View(lista.ToList());
-            //return View(await repositorio.GetAll());
+            //var lista =  repositorio.GetPreguntas(searchString);
+            //return View(lista.ToList());
+            return View(await repositorio.GetAll());
         }
 
         // GET: Crear2/Details/5
