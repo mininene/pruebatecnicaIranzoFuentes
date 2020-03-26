@@ -27,11 +27,7 @@
     columns.Add(c => c.TiempoRealizacion.Tiempo).Titled("Duracion").Filterable(true);
     columns.Add(c => c.PreguntaTextual).Titled("Pregunta").Filterable(true);
 
-    //columns.Add(c => c.FechaCreacion).Titled("Fecha Creación").Filterable(true);
-    //columns.Add(c => c.FechaActualizacion).Titled("Fecha Edición").Filterable(true);
-
-    //columns.Add(c => c.Respuesta.Respuestas).Titled("Respuestas").Filterable(true);
-    columns.Add().Titled("Info").Encoded(false)
+        columns.Add().Titled("Info").Encoded(false)
                     .Sanitized(false)
                     .RenderValueAs(o => (
     

@@ -44,3 +44,4 @@ SelectListItems: EntityType: EntitySet 'SelectListItems' is based on type 'Selec
 [26/03/2020 02:43:01] Se detectó un posible valor Request.Form peligroso en el cliente (PreguntaTextual="<p>lkl</p>").
 [26/03/2020 02:43:01] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
 ~/Views/Shared/Error.csthml
+[26/03/2020 21:10:12] C:\Users\campi\Desktop\pruebatecnicaIranzoFuentes\BancoDePreguntas\Views\CrearPregunta\Index.cshtml(34): error CS1501: No overload for method 'WithPaging' takes 0 arguments
