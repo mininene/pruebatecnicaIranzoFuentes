@@ -161,10 +161,28 @@
     <Compile Include="Services\LogService\DevelopmentLog.cs" />
     <Compile Include="Services\LogService\ILog.cs" />
     <Compile Include="Services\LogService\ProductionLog.cs" />
+    <Compile Include="Services\Repository\AsignaturaRepository\AsignauraRepository.cs" />
+    <Compile Include="Services\Repository\AsignaturaRepository\IAsignaturaRepository.cs" />
+    <Compile Include="Services\Repository\EstudioRepository\EstudioRepository.cs" />
+    <Compile Include="Services\Repository\EstudioRepository\IEstudioRepository.cs" />
     <Compile Include="Services\Repository\GenericRepository.cs" />
+    <Compile Include="Services\Repository\GradoDeDificultadRepository\DificultadRepository.cs" />
+    <Compile Include="Services\Repository\GradoDeDificultadRepository\IDificultadRepository.cs" />
+    <Compile Include="Services\Repository\IdiomaRepository\IdiomaRepository.cs" />
+    <Compile Include="Services\Repository\IdiomaRepository\IIdiomaRepository.cs" />
     <Compile Include="Services\Repository\IGenericRepository.cs" />
     <Compile Include="Services\Repository\PreguntaRepository\IPreguntaRepository.cs" />
     <Compile Include="Services\Repository\PreguntaRepository\PreguntaRepository.cs" />
+    <Compile Include="Services\Repository\RespuestaRepository\IRespuestaRepository.cs" />
+    <Compile Include="Services\Repository\RespuestaRepository\RespuestaRepository.cs" />
+    <Compile Include="Services\Repository\TemaRepository\ITemaRepository.cs" />
+    <Compile Include="Services\Repository\TemaRepository\TemaRepository.cs" />
+    <Compile Include="Services\Repository\TiempoRealizacionRepository\ITiempoRepository.cs" />
+    <Compile Include="Services\Repository\TiempoRealizacionRepository\TiempoRepository.cs" />
+    <Compile Include="Services\Repository\TipoPreguntaRepoitory\ITipoPreguntaRepository.cs" />
+    <Compile Include="Services\Repository\TipoPreguntaRepoitory\TipoPreguntaRepository.cs" />
+    <Compile Include="Services\Repository\UsuarioRepository\IUsuarioRepository.cs" />
+    <Compile Include="Services\Repository\UsuarioRepository\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
