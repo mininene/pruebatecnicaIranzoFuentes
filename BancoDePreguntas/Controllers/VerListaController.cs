@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using BancoDePreguntas.DAL;
 using BancoDePreguntas.Models;
 using BancoDePreguntas.Services.Repository.PreguntaRepository;
+using BancoDePreguntas.InfraestructuraTransversal.ControllerException;
 
 namespace BancoDePreguntas.Controllers
 {
@@ -31,22 +32,57 @@ namespace BancoDePreguntas.Controllers
         {
             //var lista =  repositorio.GetPreguntas(searchString);
             //return View(lista.ToList());
-            return View(await repositorio.GetAll());
+            try
+            {
+                return View(await repositorio.GetAll());
+            }
+            catch (Exception ex)
+            {throw new ControllerException("Error en task ActionResult Get", ex);}
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // GET: Crear2/Details/5
         public async Task<ActionResult> Details(int? id)
         {
-            if (id == null)
+            try
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Pregunta pregunta = await repositorio.GetById(id);
+                if (pregunta == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(pregunta);
             }
-            Pregunta pregunta = await repositorio.GetById(id);
-            if (pregunta == null)
-            {
-                return HttpNotFound();
-            }
-            return View(pregunta);
+            catch (Exception ex)
+            { throw new ControllerException("Error en task ActionResult Details", ex); }
         }
 
         // GET: Crear2/Create
