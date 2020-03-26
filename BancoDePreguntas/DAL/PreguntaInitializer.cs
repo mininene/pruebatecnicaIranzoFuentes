@@ -104,6 +104,7 @@ namespace BancoDePreguntas.DAL
       new Pregunta{TemaId=2,TipoId=2, IdiomaId=3,DificultadId=2,TiempodId=2,AsignaturaId=1,EstudioId=1, RespuestaId=1, PreguntaTextual="¿6x9 =4?",FechaCreacion=DateTime.Parse("2006-04-11"), FechaActualizacion =DateTime.Parse("2006-04-11")},
       new Pregunta{TemaId=2,TipoId=2, IdiomaId=2,DificultadId=1,TiempodId=3,AsignaturaId=1,EstudioId=2, RespuestaId=2, PreguntaTextual="¿Amar y querer son sinonimos?",FechaCreacion=DateTime.Parse("2006-04-11"), FechaActualizacion=DateTime.Parse("2006-04-11")},
       new Pregunta{TemaId=1,TipoId=2, IdiomaId=1,DificultadId=1,TiempodId=1,AsignaturaId=2,EstudioId=1, RespuestaId=1, PreguntaTextual="¿4-2 = 1?",FechaCreacion=DateTime.Parse("2006-04-11"), FechaActualizacion=DateTime.Parse("2006-04-11")},
+      new Pregunta{TemaId=2,TipoId=1, IdiomaId=3,DificultadId=2,TiempodId=1,AsignaturaId=2,EstudioId=1, RespuestaId=1, PreguntaTextual="¿6x2=12?",FechaCreacion=DateTime.Parse("2006-04-11"), FechaActualizacion=DateTime.Parse("2006-04-11")},
 
             };
      
