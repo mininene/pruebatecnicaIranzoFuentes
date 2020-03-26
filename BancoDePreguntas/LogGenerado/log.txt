@@ -18,3 +18,8 @@ SelectListItems: EntityType: EntitySet 'SelectListItems' is based on type 'Selec
 BancoDePreguntas.DAL.SelectListItem: : EntityType 'SelectListItem' has no key defined. Define the key for this EntityType.
 SelectListItems: EntityType: EntitySet 'SelectListItems' is based on type 'SelectListItem' that has no keys defined.
 
+[26/03/2020 00:34:51] Se alcanzó el final del archivo antes del final del comentario de bloque. Todos los comentarios que empiezan por la secuencia "@*" deben terminar con una secuencia "*@" correspondiente.
+
+[26/03/2020 00:35:03] Se alcanzó el final del archivo antes del final del comentario de bloque. Todos los comentarios que empiezan por la secuencia "@*" deben terminar con una secuencia "*@" correspondiente.
+
+[26/03/2020 01:03:57] C:\Users\campi\Desktop\pruebatecnicaIranzoFuentes\BancoDePreguntas\Views\VerLista\Index.cshtml(35): error CS1061: 'IGridHtmlOptions<Pregunta>' does not contain a definition for 'Empty' and no extension method 'Empty' accepting a first argument of type 'IGridHtmlOptions<Pregunta>' could be found (are you missing a using directive or an assembly reference?)

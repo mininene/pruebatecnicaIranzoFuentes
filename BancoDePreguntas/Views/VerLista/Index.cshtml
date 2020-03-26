@@ -1,98 +1,122 @@
 ﻿@model IEnumerable<BancoDePreguntas.Models.Pregunta>
-
+@using GridMvc.Html
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+<link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-3.31.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
+
+
+
 @*<p>
         @Html.ActionLink("Create New", "Create")
     </p>*@
 
-@using (Html.BeginForm())
+@Html.Grid(Model).Columns(columns =>
 {
-    <p>
-        Find by name: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
-    </p>
-}
+    columns.Add(c => c.Estudio.NombreEstudio).Titled("Estudio");
+    columns.Add(c => c.Asignatura.NombreAsignatura).Titled("Asignatura");
+    columns.Add(c => c.Tema.NombreTema).Titled("Tema");
+    columns.Add(c => c.TipoPregunta.TipoDePregunta).Titled("TipodePregunta");
+    columns.Add(c => c.Idioma.Lenguaje).Titled("Idioma");
+    columns.Add(c => c.GradoDificultad.Nivel).Titled("Dificultad");
+    columns.Add(c => c.TiempoRealizacion.Tiempo).Titled("Duracion");
+    columns.Add(c => c.PreguntaTextual).Titled("Pregunta");
+    //columns.Add(c => c.FechaCreacion).Titled("Fecha Creación").Filterable(true);
+    //columns.Add(c => c.FechaActualizacion).Titled("Fecha Edición").Filterable(true);
+
+    //columns.Add(c => c.Respuesta.Respuestas).Titled("Respuestas").Filterable(true);
+
+}).WithPaging(3).Sortable(true).Filterable(true)
+.
+@*@using (Html.BeginForm())
+    {
+        <p>
+            Find by name: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    }*@
 <table class="table">
-    <tr>
+    @*<tr>
 
 
-        <th>
-            @Html.DisplayNameFor(model => model.Asignatura.NombreAsignatura)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estudio.NombreEstudio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GradoDificultad.Nivel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Idioma.Lenguaje)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Respuesta.Respuestas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tema.NombreTema)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TiempoRealizacion.Tiempo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoPregunta.TipoDePregunta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PreguntaTextual)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaCreacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaActualizacion)
-        </th>
-        <th></th>
-    </tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Asignatura.NombreAsignatura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estudio.NombreEstudio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GradoDificultad.Nivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idioma.Lenguaje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Respuesta.Respuestas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tema.NombreTema)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TiempoRealizacion.Tiempo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoPregunta.TipoDePregunta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreguntaTextual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaActualizacion)
+            </th>
+            <th></th>
+        </tr>*@
 
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Asignatura.NombreAsignatura)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estudio.NombreEstudio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GradoDificultad.Nivel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Idioma.Lenguaje)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Respuesta.Respuestas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tema.NombreTema)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TiempoRealizacion.Tiempo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoPregunta.TipoDePregunta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PreguntaTextual)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaCreacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaActualizacion)
-            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Asignatura.NombreAsignatura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estudio.NombreEstudio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GradoDificultad.Nivel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idioma.Lenguaje)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Respuesta.Respuestas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tema.NombreTema)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TiempoRealizacion.Tiempo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoPregunta.TipoDePregunta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PreguntaTextual)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaCreacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaActualizacion)
+                </td>*@
 
 
             @*<td>
