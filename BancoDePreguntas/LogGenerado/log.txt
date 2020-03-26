@@ -23,3 +23,24 @@ SelectListItems: EntityType: EntitySet 'SelectListItems' is based on type 'Selec
 [26/03/2020 00:35:03] Se alcanzó el final del archivo antes del final del comentario de bloque. Todos los comentarios que empiezan por la secuencia "@*" deben terminar con una secuencia "*@" correspondiente.
 
 [26/03/2020 01:03:57] C:\Users\campi\Desktop\pruebatecnicaIranzoFuentes\BancoDePreguntas\Views\VerLista\Index.cshtml(35): error CS1061: 'IGridHtmlOptions<Pregunta>' does not contain a definition for 'Empty' and no extension method 'Empty' accepting a first argument of type 'IGridHtmlOptions<Pregunta>' could be found (are you missing a using directive or an assembly reference?)
+[26/03/2020 02:18:24] Se detectó un posible valor Request.Form peligroso en el cliente (PreguntaTextual="<p><em>dsgdsgsdsdg</...").
+[26/03/2020 02:18:24] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[26/03/2020 02:18:41] Se detectó un posible valor Request.Form peligroso en el cliente (PreguntaTextual="<p><em>dsgdsgsdsdg</...").
+[26/03/2020 02:18:41] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[26/03/2020 02:19:08] Se detectó un posible valor Request.Form peligroso en el cliente (PreguntaTextual="<p>hola</p>").
+[26/03/2020 02:19:08] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[26/03/2020 02:33:36] Se detectó un posible valor Request.Form peligroso en el cliente (PreguntaTextual="<p>dfgdfssg</p>").
+[26/03/2020 02:33:36] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[26/03/2020 02:37:01] Se detectó un posible valor Request.Form peligroso en el cliente (PreguntaTextual="<p>dgfdg</p>").
+[26/03/2020 02:37:01] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[26/03/2020 02:38:22] Se detectó un posible valor Request.Form peligroso en el cliente (PreguntaTextual="<p>fd</p>").
+[26/03/2020 02:38:22] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[26/03/2020 02:43:01] Se detectó un posible valor Request.Form peligroso en el cliente (PreguntaTextual="<p>lkl</p>").
+[26/03/2020 02:43:01] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml

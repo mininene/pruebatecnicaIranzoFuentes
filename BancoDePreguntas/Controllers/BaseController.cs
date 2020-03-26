@@ -9,21 +9,21 @@ namespace BancoDePreguntas.Controllers
 {
     public abstract class BaseController : Controller
     {
-        protected override void OnException(ExceptionContext filterContext)
-        {
-            ILog log = new ProductionLog();
+        //protected override void OnException(ExceptionContext filterContext)
+        //{
+        //    ILog log = new ProductionLog();
 
-            if (filterContext.ExceptionHandled)
-            {
-                return;
-            }
+        //    if (filterContext.ExceptionHandled)
+        //    {
+        //        return;
+        //    }
 
-            log.WriteLog(filterContext.Exception.Message);
-            filterContext.Result = new ViewResult
-            {
-                ViewName = "~/Views/Shared/Error.csthml"
-            };
-            filterContext.ExceptionHandled = true;
-        }
+        //    log.WriteLog(filterContext.Exception.Message);
+        //    filterContext.Result = new ViewResult
+        //    {
+        //        ViewName = "~/Views/Shared/Error.csthml"
+        //    };
+        //    filterContext.ExceptionHandled = true;
+        //}
     }
 }

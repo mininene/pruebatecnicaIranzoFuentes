@@ -3,14 +3,18 @@
 @{
     ViewBag.Title = "Create";
 }
-
+[ValidateInput(false)]
 <h2>Crear Pregunta</h2>
 
+<script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
+<script src="@Url.Content("~/Scripts/ckeditor/adapters/jquery.js")"></script>
 
-@using (Html.BeginForm()) 
+
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Pregunta</h4>
         <hr />
@@ -58,7 +62,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PreguntaTextual, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.PreguntaTextual, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.TextAreaFor(model => model.PreguntaTextual, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextAreaFor(model => model.PreguntaTextual, new { @class = "ckeditor" })
                 @Html.ValidationMessageFor(model => model.PreguntaTextual, "", new { @class = "text-danger" })
             </div>
         </div>
