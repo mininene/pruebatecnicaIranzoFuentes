@@ -69,3 +69,19 @@ Nombre del parámetro: parameters
 Nombre del parámetro: parameters
 [01/04/2020 14:44:40] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
 ~/Views/Shared/Error.csthml
+[01/04/2020 18:53:51] El diccionario de parámetros contiene una entrada NULL para el parámetro 'EstudioId' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Threading.Tasks.Task`1[System.Web.Mvc.ActionResult] Index(Int32, Int32, Int32, Int32)' en 'BancoDePreguntas.Controllers.VerListaController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+[01/04/2020 18:53:52] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[01/04/2020 19:00:18] El diccionario de parámetros contiene una entrada NULL para el parámetro 'EstudioId' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Threading.Tasks.Task`1[System.Web.Mvc.ActionResult] Index(Int32, Int32, Int32, Int32)' en 'BancoDePreguntas.Controllers.VerListaController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+[01/04/2020 19:00:18] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[01/04/2020 19:00:26] El diccionario de parámetros contiene una entrada NULL para el parámetro 'EstudioId' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Threading.Tasks.Task`1[System.Web.Mvc.ActionResult] Index(Int32, Int32, Int32, Int32)' en 'BancoDePreguntas.Controllers.VerListaController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+[01/04/2020 19:00:26] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[01/04/2020 19:00:33] El diccionario de parámetros contiene una entrada NULL para el parámetro 'EstudioId' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Threading.Tasks.Task`1[System.Web.Mvc.ActionResult] Index(Int32, Int32, Int32, Int32)' en 'BancoDePreguntas.Controllers.VerListaController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+[01/04/2020 19:00:33] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
