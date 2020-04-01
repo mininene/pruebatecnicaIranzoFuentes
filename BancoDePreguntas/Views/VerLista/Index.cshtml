@@ -27,9 +27,9 @@
             @*<td> @Html.DropDownList("DificultadId", null, htmlAttributes: new { @class = "form-control" })</td>*@
 
             @*<td>   @Html.DropDownList("TiempodId", null, htmlAttributes: new { @class = "form-control" })</td>*@
-            <td>   <input class="btn btn-warning" type="submit" value="Filtrar" /></td>
-
-        </tr>
+            <td>   <input class="btn btn-success" type="submit" value="Filtrar" /></td>
+            <td>@Html.ActionLink("Quitar filtros", "Index", new { }, new { @class = "btn btn-warning" })</td>
+</tr>
     </table>
 }
 
