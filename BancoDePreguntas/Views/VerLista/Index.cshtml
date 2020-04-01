@@ -14,22 +14,32 @@
 {
     <table>
         <tr>
+            <th> @Html.Label("Estudio", htmlAttributes: new { @class = "control-label col-md-2" })</th>
+
             <td> @Html.DropDownList("EstudioId", null, htmlAttributes: new { @class = "form-control" })</td>
+
+            <th> @Html.Label("Asignatura", htmlAttributes: new { @class = "control-label col-md-2" })</th>
 
             <td>  @Html.DropDownList("AsignaturaId", null, htmlAttributes: new { @class = "form-control" })</td>
 
             @*<td> @Html.DropDownList("TemaId", null, htmlAttributes: new { @class = "form-control" })</td>*@
 
+            <th> @Html.Label("Tipo", htmlAttributes: new { @class = "control-label col-md-2" })</th>
+
             <td> @Html.DropDownList("TipoId", null, htmlAttributes: new { @class = "form-control" })</td>
+
+            <th> @Html.Label("Idioma", htmlAttributes: new { @class = "control-label col-md-2" })</th>
 
             <td>   @Html.DropDownList("IdiomaId", null, htmlAttributes: new { @class = "form-control" })</td>
 
             @*<td> @Html.DropDownList("DificultadId", null, htmlAttributes: new { @class = "form-control" })</td>*@
 
             @*<td>   @Html.DropDownList("TiempodId", null, htmlAttributes: new { @class = "form-control" })</td>*@
+
+            <th> @Html.Label("Acciones", htmlAttributes: new { @class = "control-label col-md-2" })</th>
             <td>   <input class="btn btn-success" type="submit" value="Filtrar" /></td>
             <td>@Html.ActionLink("Quitar filtros", "Index", new { }, new { @class = "btn btn-warning" })</td>
-</tr>
+        </tr>
     </table>
 }
 
