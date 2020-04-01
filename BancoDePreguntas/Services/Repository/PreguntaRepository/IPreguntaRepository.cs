@@ -11,6 +11,7 @@ namespace BancoDePreguntas.Services.Repository.PreguntaRepository
     public interface IPreguntaRepository : IGenericRepository<Pregunta>
     {
         //IQueryable<Pregunta> GetPreguntas(VMPreguntaSearch searchModel);
-        IQueryable<Pregunta> GetPreguntas(string searchString);
+        //IQueryable<Pregunta> GetPreguntas(string searchString);
+        IQueryable<Pregunta> GetPreguntas(int searchString);
     }
 }

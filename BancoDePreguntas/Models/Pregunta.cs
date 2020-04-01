@@ -55,4 +55,11 @@ namespace BancoDePreguntas.Models
         public virtual TiempoRealizacion TiempoRealizacion { get; set; }
 
     }
+
+    public enum EstudioId
+    {
+        Medio,
+        Superior,
+        Avanzado
+    }
 }

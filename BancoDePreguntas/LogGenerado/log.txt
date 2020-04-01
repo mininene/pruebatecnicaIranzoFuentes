@@ -45,3 +45,15 @@ SelectListItems: EntityType: EntitySet 'SelectListItems' is based on type 'Selec
 [26/03/2020 02:43:01] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
 ~/Views/Shared/Error.csthml
 [26/03/2020 21:10:12] C:\Users\campi\Desktop\pruebatecnicaIranzoFuentes\BancoDePreguntas\Views\CrearPregunta\Index.cshtml(34): error CS1501: No overload for method 'WithPaging' takes 0 arguments
+[01/04/2020 12:43:38] El elemento de modelo pasado al diccionario es de tipo 'System.Collections.Generic.List`1[BancoDePreguntas.Models.Pregunta]', pero este diccionario requiere un elemento de modelo de tipo 'BancoDePreguntas.Models.Pregunta'.
+[01/04/2020 12:43:41] El elemento de modelo pasado al diccionario es de tipo 'System.Collections.Generic.List`1[BancoDePreguntas.Models.Pregunta]', pero este diccionario requiere un elemento de modelo de tipo 'BancoDePreguntas.Models.Pregunta'.
+[01/04/2020 12:43:47] El elemento de modelo pasado al diccionario es de tipo 'System.Collections.Generic.List`1[BancoDePreguntas.Models.Pregunta]', pero este diccionario requiere un elemento de modelo de tipo 'BancoDePreguntas.Models.Pregunta'.
+[01/04/2020 12:49:19] No hay ningún elemento ViewData de tipo 'IEnumerable<SelectListItem>' con la clave 'EstudioId'.
+[01/04/2020 12:49:30] Se encontró la etiqueta de cierre "tr" sin una etiqueta de inicio correspondiente. ¿Existe el mismo número de etiquetas de inicio y de cierre?
+
+[01/04/2020 12:50:52] Se encontró la etiqueta de cierre "th" sin una etiqueta de inicio correspondiente. ¿Existe el mismo número de etiquetas de inicio y de cierre?
+
+[01/04/2020 12:51:03] Se encontró la etiqueta de cierre "th" sin una etiqueta de inicio correspondiente. ¿Existe el mismo número de etiquetas de inicio y de cierre?
+
+[01/04/2020 12:51:48] Se encontró la etiqueta de cierre "th" sin una etiqueta de inicio correspondiente. ¿Existe el mismo número de etiquetas de inicio y de cierre?
+

@@ -4,16 +4,37 @@
     ViewBag.Title = "Index";
 }
 
-<h2 >Listado de Preguntas</h2>
+<h2>Listado de Preguntas</h2>
 <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
 
+<p>
+    @Html.ActionLink("Filtrar", "Create", new { }, new { @class = "btn btn-success" })
+</p>
+@using (Html.BeginForm())
+{
+ <table>
+     <tr>
+         <td> @Html.DropDownList("EstudioId", null, htmlAttributes: new { @class = "form-control" })</td>
 
+         <td>    @Html.DropDownList("AsignaturaId", null, htmlAttributes: new { @class = "form-control" })</td>
 
+         <td> @Html.DropDownList("TemaId", null, htmlAttributes: new { @class = "form-control" })</td>
 
+         <td> @Html.DropDownList("TipoId", null, htmlAttributes: new { @class = "form-control" })</td>
+
+         <td>   @Html.DropDownList("IdiomaId", null, htmlAttributes: new { @class = "form-control" })</td>
+
+         <td> @Html.DropDownList("DificultadId", null, htmlAttributes: new { @class = "form-control" })</td>
+
+         <td>   @Html.DropDownList("TiempodId", null, htmlAttributes: new { @class = "form-control" })</td>
+
+     </tr> 
+</table>
+}
 
 
 <div class="">
-    
+
 </div>
 
 @Html.Grid(Model).Columns(columns =>
@@ -30,9 +51,9 @@
         columns.Add().Titled("Info").Encoded(false)
                     .Sanitized(false)
                     .RenderValueAs(o => (
-    
+
                  Html.ActionLink(" Info", "Details", "VerLista", new { id = o.Id }, new { @class = "btn btn-info btn-sm glyphicon glyphicon-info-sign " }).ToHtmlString()
-                 
+
 
 
                          )
@@ -48,89 +69,89 @@
         </p>
     }*@
 @*<table class="table">*@
-    @*<tr>*@
+@*<tr>*@
 
 
-            @*<th>
-                @Html.DisplayNameFor(model => model.Asignatura.NombreAsignatura)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estudio.NombreEstudio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GradoDificultad.Nivel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Idioma.Lenguaje)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Respuesta.Respuestas)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tema.NombreTema)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TiempoRealizacion.Tiempo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TipoPregunta.TipoDePregunta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PreguntaTextual)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaCreacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaActualizacion)
-            </th>
-            <th></th>*@
-        @*</tr>*@
+@*<th>
+        @Html.DisplayNameFor(model => model.Asignatura.NombreAsignatura)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Estudio.NombreEstudio)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.GradoDificultad.Nivel)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Idioma.Lenguaje)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Respuesta.Respuestas)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Tema.NombreTema)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.TiempoRealizacion.Tiempo)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.TipoPregunta.TipoDePregunta)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.PreguntaTextual)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.FechaCreacion)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.FechaActualizacion)
+    </th>
+    <th></th>*@
+@*</tr>*@
 
-    @*@foreach (var item in Model)*@
-    @*{*@
-        @*<tr>*@
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.Asignatura.NombreAsignatura)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Estudio.NombreEstudio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GradoDificultad.Nivel)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Idioma.Lenguaje)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Respuesta.Respuestas)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tema.NombreTema)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TiempoRealizacion.Tiempo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TipoPregunta.TipoDePregunta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PreguntaTextual)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaCreacion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaActualizacion)
-                </td>*@
+@*@foreach (var item in Model)*@
+@*{*@
+@*<tr>*@
+@*<td>
+        @Html.DisplayFor(modelItem => item.Asignatura.NombreAsignatura)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Estudio.NombreEstudio)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GradoDificultad.Nivel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Idioma.Lenguaje)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Respuesta.Respuestas)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tema.NombreTema)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TiempoRealizacion.Tiempo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TipoPregunta.TipoDePregunta)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PreguntaTextual)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaCreacion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaActualizacion)
+    </td>*@
 
 
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-                </td>*@
-        @*</tr>*@
-    @*}*@
+@*<td>
+        @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+    </td>*@
+@*</tr>*@
+@*}*@
 
-</table>
+        </table>

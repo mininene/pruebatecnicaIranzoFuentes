@@ -28,18 +28,28 @@ namespace BancoDePreguntas.Controllers
         }
 
         // GET: Crear2
-        public async Task<ActionResult> Index(/*string searchString*/)
+        public async Task<ActionResult> Index(/*int searchString*/)
         {
-            //var lista =  repositorio.GetPreguntas(searchString);
-            //return View(lista.ToList());
+            
             try
             {
+                //var lista = repositorio.GetPreguntas(searchString);
+                //return View(lista.ToList());
+                ViewBag.AsignaturaId = new SelectList(await repositorio.ListaAsignatura(), "Id", "NombreAsignatura");
+                ViewBag.EstudioId = new SelectList(await repositorio.ListaEstudio(), "Id", "NombreEstudio");
+                ViewBag.DificultadId = new SelectList(await repositorio.ListaDificultad(), "Id", "Nivel");
+                ViewBag.IdiomaId = new SelectList(await repositorio.ListaIdioma(), "Id", "Lenguaje");
+                ViewBag.RespuestaId = new SelectList(await repositorio.ListaRespuesta(), "Id", "Respuestas");
+                ViewBag.TemaId = new SelectList(await repositorio.ListaTema(), "Id", "NombreTema");
+                ViewBag.TiempodId = new SelectList(await repositorio.ListaTiempo(), "Id", "Tiempo");
+                ViewBag.TipoId = new SelectList(await repositorio.ListaTipoPregunta(), "Id", "TipoDePregunta");
                 return View(await repositorio.GetAll());
             }
             catch (Exception ex)
             {throw new ControllerException("Error en task ActionResult Get", ex);}
         }
 
+       
 
 
 
@@ -65,8 +75,9 @@ namespace BancoDePreguntas.Controllers
 
 
 
-        // GET: Crear2/Details/5
-        public async Task<ActionResult> Details(int? id)
+
+            // GET: Crear2/Details/5
+            public async Task<ActionResult> Details(int? id)
         {
             try
             {
@@ -108,8 +119,9 @@ namespace BancoDePreguntas.Controllers
         {
             if (ModelState.IsValid)
             {
-                repositorio.Insert(pregunta);
-                await repositorio.Save();
+                //repositorio.Insert(pregunta);
+                //await repositorio.Save();
+                
                 return RedirectToAction("Index");
             }
 
@@ -121,6 +133,7 @@ namespace BancoDePreguntas.Controllers
             ViewBag.TemaId = new SelectList(await repositorio.ListaTema(), "Id", "NombreTema", pregunta.TemaId);
             ViewBag.TiempodId = new SelectList(await repositorio.ListaTiempo(), "Id", "Tiempo", pregunta.TiempodId);
             ViewBag.TipoId = new SelectList(await repositorio.ListaTipoPregunta(), "Id", "TipoDePregunta", pregunta.TipoId);
+         
             return View(pregunta);
         }
 

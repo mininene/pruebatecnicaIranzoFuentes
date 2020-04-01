@@ -27,17 +27,27 @@ namespace BancoDePreguntas.Services.Repository.PreguntaRepository
         //    }
         //    return result;
         //}
-        public IQueryable<Pregunta> GetPreguntas(string searchString)
+        //public IQueryable<Pregunta> GetPreguntas(string searchString)
+        //{
+        //    var query = from s in _context.Pregunta
+        //                select s;
+        //    if (!String.IsNullOrEmpty(searchString))
+        //    {
+        //        query = query.Where(s => s.PreguntaTextual.Contains(searchString));
+
+
+
+        public IQueryable<Pregunta> GetPreguntas(int searchString)
         {
             var query = from s in _context.Pregunta
                         select s;
-            if (!String.IsNullOrEmpty(searchString))
+            if ((searchString) != 1)
             {
-                query = query.Where(s => s.PreguntaTextual.Contains(searchString));
-                    
-                                       
+                query = query.Where(s => s.EstudioId == searchString);
             }
+
+            
             return query;
         }
-    }
+}
 }
