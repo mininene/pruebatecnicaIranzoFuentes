@@ -7,16 +7,16 @@
 <h2>Listado de Preguntas</h2>
 <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
 
-<p>
+@*<p>
     @Html.ActionLink("Filtrar", "Create", new { }, new { @class = "btn btn-success" })
-</p>
+</p>*@
 @using (Html.BeginForm())
 {
  <table>
      <tr>
          <td> @Html.DropDownList("EstudioId", null, htmlAttributes: new { @class = "form-control" })</td>
 
-         <td>    @Html.DropDownList("AsignaturaId", null, htmlAttributes: new { @class = "form-control" })</td>
+         <td>  @Html.DropDownList("AsignaturaId", null, htmlAttributes: new { @class = "form-control" })</td>
 
          <td> @Html.DropDownList("TemaId", null, htmlAttributes: new { @class = "form-control" })</td>
 
@@ -27,6 +27,7 @@
          <td> @Html.DropDownList("DificultadId", null, htmlAttributes: new { @class = "form-control" })</td>
 
          <td>   @Html.DropDownList("TiempodId", null, htmlAttributes: new { @class = "form-control" })</td>
+         <td>   <input type="submit" value="Buscar" /></td>
 
      </tr> 
 </table>
@@ -37,7 +38,7 @@
 
 </div>
 
-@Html.Grid(Model).Columns(columns =>
+@*@Html.Grid(Model).Columns(columns =>
 {
     columns.Add(c => c.Estudio.NombreEstudio).Titled("Estudio").Filterable(true);
     columns.Add(c => c.Asignatura.NombreAsignatura).Titled("Asignatura").Filterable(true);
@@ -59,7 +60,7 @@
                          )
                             );
 
-}).WithPaging(5).Sortable(true)
+}).WithPaging(5).Sortable(true)*@
 
 @*@using (Html.BeginForm())
     {
@@ -68,11 +69,11 @@
             <input type="submit" value="Search" />
         </p>
     }*@
-@*<table class="table">*@
-@*<tr>*@
+<table class="table">
+<tr>
 
 
-@*<th>
+<th>
         @Html.DisplayNameFor(model => model.Asignatura.NombreAsignatura)
     </th>
     <th>
@@ -105,13 +106,13 @@
     <th>
         @Html.DisplayNameFor(model => model.FechaActualizacion)
     </th>
-    <th></th>*@
-@*</tr>*@
+    <th></th>
+</tr>
 
-@*@foreach (var item in Model)*@
-@*{*@
-@*<tr>*@
-@*<td>
+@foreach (var item in Model)
+{
+<tr>
+<td>
         @Html.DisplayFor(modelItem => item.Asignatura.NombreAsignatura)
     </td>
     <td>
@@ -143,15 +144,15 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.FechaActualizacion)
-    </td>*@
+    </td>
 
 
-@*<td>
-        @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+<td>
+        @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
         @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-    </td>*@
-@*</tr>*@
-@*}*@
+        @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+    </td>
+</tr>
+}
 
         </table>

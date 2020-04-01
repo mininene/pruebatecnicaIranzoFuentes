@@ -49,8 +49,20 @@ namespace BancoDePreguntas.Controllers
             {throw new ControllerException("Error en task ActionResult Get", ex);}
         }
 
-       
 
+        [HttpPost]
+        public async Task<ActionResult> Index(int EstudioId)
+        {
+            ViewBag.AsignaturaId = new SelectList(await repositorio.ListaAsignatura(), "Id", "NombreAsignatura");
+            ViewBag.EstudioId = new SelectList(await repositorio.ListaEstudio(), "Id", "NombreEstudio");
+            ViewBag.DificultadId = new SelectList(await repositorio.ListaDificultad(), "Id", "Nivel");
+            ViewBag.IdiomaId = new SelectList(await repositorio.ListaIdioma(), "Id", "Lenguaje");
+            ViewBag.RespuestaId = new SelectList(await repositorio.ListaRespuesta(), "Id", "Respuestas");
+            ViewBag.TemaId = new SelectList(await repositorio.ListaTema(), "Id", "NombreTema");
+            ViewBag.TiempodId = new SelectList(await repositorio.ListaTiempo(), "Id", "Tiempo");
+            ViewBag.TipoId = new SelectList(await repositorio.ListaTipoPregunta(), "Id", "TipoDePregunta");
+            return View( repositorio.GetPreguntas(EstudioId));
+        }
 
 
 

@@ -41,10 +41,9 @@ namespace BancoDePreguntas.Services.Repository.PreguntaRepository
         {
             var query = from s in _context.Pregunta
                         select s;
-            if ((searchString) != 1)
-            {
+            
                 query = query.Where(s => s.EstudioId == searchString);
-            }
+            
 
             
             return query;
