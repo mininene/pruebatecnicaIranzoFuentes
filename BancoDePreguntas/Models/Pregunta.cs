@@ -56,10 +56,5 @@ namespace BancoDePreguntas.Models
 
     }
 
-    public enum EstudioId
-    {
-        Medio,
-        Superior,
-        Avanzado
-    }
+   
 }
