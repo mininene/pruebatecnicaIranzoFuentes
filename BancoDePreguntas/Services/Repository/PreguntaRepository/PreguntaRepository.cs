@@ -43,8 +43,8 @@ namespace BancoDePreguntas.Services.Repository.PreguntaRepository
                         select s;
             
                 query = query.Where(s => s.EstudioId == searchEstudio && s.AsignaturaId==searchAsign 
-             && s.TipoId == searchTipo && s.IdiomaId == searchIdioma
-                ) ;
+             && s.TipoId == searchTipo && s.IdiomaId == searchIdioma)
+             .OrderBy(s => s.EstudioId)  ;
                        
             return query;
         }
