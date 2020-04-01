@@ -37,16 +37,26 @@ namespace BancoDePreguntas.Services.Repository.PreguntaRepository
 
 
 
-        public IQueryable<Pregunta> GetPreguntas(int searchString)
+        public IQueryable<Pregunta> GetPreguntas(int searchEstudio, int searchAsign, int searchTipo, int searchIdioma )
         {
             var query = from s in _context.Pregunta
                         select s;
             
-                query = query.Where(s => s.EstudioId == searchString);
-            
-
-            
+                query = query.Where(s => s.EstudioId == searchEstudio && s.AsignaturaId==searchAsign 
+             && s.TipoId == searchTipo && s.IdiomaId == searchIdioma
+                ) ;
+                       
             return query;
         }
-}
+
+        public IQueryable<Pregunta> Geto(int searchString)
+        {
+            var query = from s in _context.Pregunta
+                        select s;
+
+            query = query.Where(s => s.AsignaturaId == searchString);
+
+            return query;
+        }
+    }
 }

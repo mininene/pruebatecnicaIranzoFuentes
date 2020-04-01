@@ -12,6 +12,7 @@ namespace BancoDePreguntas.Services.Repository.PreguntaRepository
     {
         //IQueryable<Pregunta> GetPreguntas(VMPreguntaSearch searchModel);
         //IQueryable<Pregunta> GetPreguntas(string searchString);
-        IQueryable<Pregunta> GetPreguntas(int searchString);
+        IQueryable<Pregunta> GetPreguntas(int searchEstudio, int searchAsign, int searchTipo, int searchIdioma);
+        IQueryable<Pregunta> Geto(int searchString);
     }
 }

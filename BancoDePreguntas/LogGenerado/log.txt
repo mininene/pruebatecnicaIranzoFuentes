@@ -57,3 +57,15 @@ SelectListItems: EntityType: EntitySet 'SelectListItems' is based on type 'Selec
 
 [01/04/2020 12:51:48] Se encontró la etiqueta de cierre "th" sin una etiqueta de inicio correspondiente. ¿Existe el mismo número de etiquetas de inicio y de cierre?
 
+[01/04/2020 14:43:56] El diccionario de parámetros contiene una entrada NULL para el parámetro 'TiempoId' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Threading.Tasks.Task`1[System.Web.Mvc.ActionResult] Index(Int32, Int32, Int32, Int32, Int32, Int32, Int32)' en 'BancoDePreguntas.Controllers.VerListaController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+[01/04/2020 14:43:56] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[01/04/2020 14:44:02] El diccionario de parámetros contiene una entrada NULL para el parámetro 'TiempoId' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Threading.Tasks.Task`1[System.Web.Mvc.ActionResult] Index(Int32, Int32, Int32, Int32, Int32, Int32, Int32)' en 'BancoDePreguntas.Controllers.VerListaController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+[01/04/2020 14:44:02] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[01/04/2020 14:44:40] El diccionario de parámetros contiene una entrada NULL para el parámetro 'TiempoId' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Threading.Tasks.Task`1[System.Web.Mvc.ActionResult] Index(Int32, Int32, Int32, Int32, Int32, Int32, Int32)' en 'BancoDePreguntas.Controllers.VerListaController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+[01/04/2020 14:44:40] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml

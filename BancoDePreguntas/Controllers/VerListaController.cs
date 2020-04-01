@@ -51,7 +51,7 @@ namespace BancoDePreguntas.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> Index(int EstudioId)
+        public async Task<ActionResult> Index(int EstudioId, int AsignaturaId, int TipoId, int IdiomaId)
         {
             ViewBag.AsignaturaId = new SelectList(await repositorio.ListaAsignatura(), "Id", "NombreAsignatura");
             ViewBag.EstudioId = new SelectList(await repositorio.ListaEstudio(), "Id", "NombreEstudio");
@@ -61,9 +61,22 @@ namespace BancoDePreguntas.Controllers
             ViewBag.TemaId = new SelectList(await repositorio.ListaTema(), "Id", "NombreTema");
             ViewBag.TiempodId = new SelectList(await repositorio.ListaTiempo(), "Id", "Tiempo");
             ViewBag.TipoId = new SelectList(await repositorio.ListaTipoPregunta(), "Id", "TipoDePregunta");
-            return View( repositorio.GetPreguntas(EstudioId));
+            return View( repositorio.GetPreguntas(EstudioId, AsignaturaId, TipoId, IdiomaId));
         }
 
+        //[HttpPost]
+        //public async Task<ActionResult> Index(int AsignaturaId)
+        //{
+        //    ViewBag.AsignaturaId = new SelectList(await repositorio.ListaAsignatura(), "Id", "NombreAsignatura");
+        //    ViewBag.EstudioId = new SelectList(await repositorio.ListaEstudio(), "Id", "NombreEstudio");
+        //    ViewBag.DificultadId = new SelectList(await repositorio.ListaDificultad(), "Id", "Nivel");
+        //    ViewBag.IdiomaId = new SelectList(await repositorio.ListaIdioma(), "Id", "Lenguaje");
+        //    ViewBag.RespuestaId = new SelectList(await repositorio.ListaRespuesta(), "Id", "Respuestas");
+        //    ViewBag.TemaId = new SelectList(await repositorio.ListaTema(), "Id", "NombreTema");
+        //    ViewBag.TiempodId = new SelectList(await repositorio.ListaTiempo(), "Id", "Tiempo");
+        //    ViewBag.TipoId = new SelectList(await repositorio.ListaTipoPregunta(), "Id", "TipoDePregunta");
+        //    return View(repositorio.Geto(AsignaturaId));
+        //}
 
 
 
@@ -88,8 +101,9 @@ namespace BancoDePreguntas.Controllers
 
 
 
-            // GET: Crear2/Details/5
-            public async Task<ActionResult> Details(int? id)
+
+        // GET: Crear2/Details/5
+        public async Task<ActionResult> Details(int? id)
         {
             try
             {
