@@ -85,3 +85,12 @@ Nombre del parámetro: parameters
 Nombre del parámetro: parameters
 [01/04/2020 19:00:33] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
 ~/Views/Shared/Error.csthml
+[10/04/2020 16:40:35] C:\Users\campi\Desktop\pruebatecnicaIranzoFuentes\BancoDePreguntas\Views\VerLista\Index.cshtml(31): error CS0030: Cannot convert type 'string' to 'System.Web.Mvc.SelectList'
+[10/04/2020 16:41:50] El diccionario de parámetros contiene una entrada NULL para el parámetro 'IdiomaId' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Threading.Tasks.Task`1[System.Web.Mvc.ActionResult] Index(Int32, Int32, Int32, Int32)' en 'BancoDePreguntas.Controllers.VerListaController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+[10/04/2020 16:41:50] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml
+[10/04/2020 16:42:36] El diccionario de parámetros contiene una entrada NULL para el parámetro 'IdiomaId' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Threading.Tasks.Task`1[System.Web.Mvc.ActionResult] Index(Int32, Int32, Int32, Int32)' en 'BancoDePreguntas.Controllers.VerListaController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+[10/04/2020 16:42:36] No se encuentra la vista '~/Views/Shared/Error.csthml' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Shared/Error.csthml

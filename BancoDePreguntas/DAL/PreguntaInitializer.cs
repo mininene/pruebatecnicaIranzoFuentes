@@ -14,9 +14,11 @@ namespace BancoDePreguntas.DAL
           
             var listaEstudio = new List<Estudio>
             {
+
             new Estudio{Id=1,NombreEstudio= "Medio"},
             new Estudio{Id=2,NombreEstudio= "Superior"},
             new Estudio{Id=3,NombreEstudio= "Avanzado"},
+            
 
             };
             listaEstudio.ForEach(s => context.Estudio.Add(s));
@@ -58,9 +60,11 @@ namespace BancoDePreguntas.DAL
 
             var listaIdioma = new List<Idioma>
             {
+            
             new Idioma{Id=1,Lenguaje= "Español"},
             new Idioma{Id=2, Lenguaje= "Ingles"},
-            
+          
+
             };
             listaIdioma.ForEach(s => context.Idioma.Add(s));
             context.SaveChanges();

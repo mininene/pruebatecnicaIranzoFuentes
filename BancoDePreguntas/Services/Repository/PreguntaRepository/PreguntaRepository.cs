@@ -9,17 +9,174 @@ namespace BancoDePreguntas.Services.Repository.PreguntaRepository
     public class PreguntaRepository : GenericRepository<Pregunta>, IPreguntaRepository
     {
 
-        public IQueryable<Pregunta> GetPreguntas(int searchEstudio, int searchAsign, int searchTipo, int searchIdioma)
+        public IQueryable<Pregunta> GetPreguntas(int? searchEstudio, int? searchAsign, int? searchTipo, int? searchIdioma)
         {
-            var query = from s in _context.Pregunta
-                        select s;
+            var query = (from s in _context.Pregunta
+                        select s).OrderBy(s=>s.FechaActualizacion);
 
-            query = query.Where(s => s.EstudioId == searchEstudio && s.AsignaturaId == searchAsign
-            && s.TipoId == searchTipo && s.IdiomaId == searchIdioma)
-            .OrderBy(s => s.EstudioId);
+            if (searchEstudio != null && searchAsign != null && searchTipo != null && searchIdioma != null)
+            {
+                query = query.Where(s => s.EstudioId == searchEstudio && s.AsignaturaId == searchAsign
+                && s.TipoId == searchTipo && s.IdiomaId == searchIdioma)
+                .OrderBy(s => s.EstudioId);
 
-            return query;
+                return query;
+            }
+
+
+            if (searchEstudio == null && searchAsign != null && searchTipo != null && searchIdioma != null)
+            {
+                query = query.Where(s =>  s.AsignaturaId == searchAsign && s.TipoId == searchTipo && s.IdiomaId == searchIdioma)
+                .OrderBy(s => s.EstudioId);
+
+                return query;
+            }
+
+
+                       
+            if (searchEstudio != null && searchAsign == null && searchTipo != null && searchIdioma != null)
+            {
+                query = query.Where(s => s.TipoId == searchTipo && s.IdiomaId == searchIdioma)
+               .OrderBy(s => s.EstudioId);
+
+                return query;
+            }
+
+
+            if (searchEstudio != null && searchAsign != null && searchTipo == null && searchIdioma != null)
+            {
+                query = query.Where(s => s.EstudioId == searchEstudio && s.AsignaturaId == searchAsign
+                  && s.IdiomaId == searchIdioma)
+                  .OrderBy(s => s.EstudioId);
+            }
+
+
+                                 
+            if (searchEstudio != null && searchAsign != null && searchTipo != null && searchIdioma == null)
+            {
+                query = query.Where(s => s.EstudioId == searchEstudio && s.AsignaturaId == searchAsign
+                 )
+                  .OrderBy(s => s.EstudioId);
+
+                return query;
+            }
+
+
+            if (searchEstudio == null && searchAsign == null && searchTipo == null && searchIdioma != null)
+            {
+                query = query.Where(s =>s.IdiomaId == searchIdioma)
+                .OrderBy(s => s.EstudioId);
+
+                return query;
+            }
+
+
+            if (searchEstudio == null && searchAsign == null && searchTipo != null && searchIdioma == null)
+            {
+                query = query.Where(s => s.TipoId == searchTipo)
+                .OrderBy(s => s.EstudioId);
+
+                return query;
+            }
+
+
+            if (searchEstudio == null && searchAsign == null && searchTipo != null && searchIdioma == null)
+            {
+                query = query.Where(s => s.TipoId == searchTipo)
+                .OrderBy(s => s.EstudioId);
+
+                return query;
+            }
+
+            if (searchEstudio == null && searchAsign != null && searchTipo == null && searchIdioma == null)
+            {
+                query = query.Where(s => s.AsignaturaId == searchAsign)
+                .OrderBy(s => s.EstudioId);
+
+                return query;
+            }
+
+            if (searchEstudio != null && searchAsign == null && searchTipo == null && searchIdioma == null)
+            {
+                query = query.Where(s => s.EstudioId == searchEstudio)
+                .OrderBy(s => s.EstudioId);
+
+                return query;
+            }
+
+            if (searchEstudio != null && searchAsign == null && searchTipo == null && searchIdioma != null)
+            {
+                query = query.Where(s => s.EstudioId == searchEstudio && s.IdiomaId == searchIdioma)
+               .OrderBy(s => s.EstudioId);
+
+                return query;
+             
+            }
+
+            if (searchEstudio == null && searchAsign != null && searchTipo != null && searchIdioma == null)
+            {
+                 query = query.Where(s =>  s.AsignaturaId == searchAsign
+                && s.TipoId == searchTipo)
+                .OrderBy(s => s.EstudioId);
+
+                return query;
+
+            }
+
+            if (searchEstudio == null && searchAsign != null && searchTipo == null && searchIdioma != null)
+            {
+                query = query.Where(s => s.AsignaturaId == searchAsign
+                  && s.IdiomaId == searchIdioma)
+                  .OrderBy(s => s.EstudioId);
+
+
+                return query;
+
+            }
+
+
+            if (searchEstudio != null && searchAsign == null && searchTipo != null && searchIdioma == null)
+            {
+                query = query.Where(s => s.EstudioId == searchEstudio 
+               && s.TipoId == searchTipo )
+               .OrderBy(s => s.EstudioId);
+
+                return query;
+
+            }
+
+
+            if (searchEstudio != null && searchAsign != null && searchTipo == null && searchIdioma == null)
+            {
+                query = query.Where(s => s.EstudioId==searchEstudio
+               && s.AsignaturaId == searchAsign)
+               .OrderBy(s => s.EstudioId);
+
+                return query;
+
+            }
+
+            if (searchEstudio == null && searchAsign == null && searchTipo != null && searchIdioma != null)
+            {
+                query = query.Where(s => s.TipoId == searchTipo
+               && s.IdiomaId == searchIdioma)
+               .OrderBy(s => s.EstudioId);
+
+                return query;
+
+            }
+
+
+
+
+
+            else { return query; }
         }
+
+
+
+
+
 
                                     
         //public IQueryable<Pregunta> GetPreguntas(VMPreguntaSearch searchModel)
